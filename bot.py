@@ -43,6 +43,8 @@ statuts = [
     "Je suis sur une mission secrète pour le fromage 🧀"
 ]
 
+bruh_type = ["bruh","brŭh","brúh","brùh","brūh"] # liste des bruh
+
 @bot.event
 async def on_ready():
     activity = discord.CustomActivity(name="tag moi !")
@@ -96,7 +98,7 @@ async def on_message(message):
         if bot.user in message.mentions:
             print("Le bot a été mentionné")
             bruh_count = random.randint(1, 50)
-            response = " ".join(["bruh"] * bruh_count)
+            response = " ".join([bruh_type[randint(0,4)]] * bruh_count) #bruh aléatoir
             await message.channel.send(response)
 
         # Réponse aléatoire avec "bruh"
