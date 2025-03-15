@@ -102,7 +102,7 @@ async def on_message(message):
             await message.channel.send(response)
 
         # Réponse aléatoire avec "bruh"
-        elif random.randint(1, 10) == 1:
+        elif random.randint(1, 10) == 5:
             print("Le bot répond avec 'bruh'")
             bruh_count = random.randint(1, 30) 
             response = " ".join([bruh_type[random.randint(0,4)]] * bruh_count) 
