@@ -43,13 +43,13 @@ statuts = [
     "Je suis sur une mission secrète pour le fromage 🧀"
 ]
 
-bruh_type = ["bruh","brŭh","brúh","brùh","brūh"] # liste des bruh
+bruh_type = ["bruh ","brŭh ","brúh ","brùh ","brūh "] # liste des bruh
 
-def bruh_msg(n):#créer un message avec différent bruh
+def bruh_msg(n):
     response = ""
     for i in range(random.randint(1, n)):
         if random.randint(1, 100) == 50:
-            response += "hurb"
+            response += "hurb "
         else:
             response += bruh_type[random.randint(0,4)]
     return response
@@ -106,18 +106,18 @@ async def on_message(message):
         # Réagir si le bot est mentionné
         if bot.user in message.mentions:
             print("Le bot a été mentionné")
-            bruh_count = random.randint(1, 50)
-            response = " ".join([bruh_msg(bruh_count)]) #bruh aléatoir
+            bruh_count = random.randint(1, 50) 
+            response = "".join([bruh_msg(bruh_count)])
             await message.channel.send(response)
 
         # Réponse aléatoire avec "bruh"
         elif random.randint(1, 10) == 5:
-            print("Le bot répond avec 'bruh'")
-            bruh_count = random.randint(1, 30) 
-            response = " ".join([bruh_msg(bruh_count)]) 
-            await message.channel.send(response)
+             print("Le bot répond avec 'bruh'") 
+             bruh_count = random.randint(1, 30) 
+             response = "".join([bruh_msg(bruh_count)])
+             await message.channel.send(response)
         
-        await bot.process_commands(message)
+        #await bot.process_commands(message)
 
     else:
         return
