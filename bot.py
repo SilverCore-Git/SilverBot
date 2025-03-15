@@ -107,14 +107,14 @@ async def on_message(message):
         if bot.user in message.mentions:
             print("Le bot a été mentionné")
             bruh_count = random.randint(1, 50)
-            response = " ".join([bruh_msg(bruh_count)] * bruh_count) #bruh aléatoir
+            response = " ".join([bruh_msg(bruh_count)]) #bruh aléatoir
             await message.channel.send(response)
 
         # Réponse aléatoire avec "bruh"
         elif random.randint(1, 10) == 5:
             print("Le bot répond avec 'bruh'")
             bruh_count = random.randint(1, 30) 
-            response = " ".join([bruh_msg(bruh_count)] * bruh_count) 
+            response = " ".join([bruh_msg(bruh_count)]) 
             await message.channel.send(response)
         
         await bot.process_commands(message)
