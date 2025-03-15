@@ -45,6 +45,15 @@ statuts = [
 
 bruh_type = ["bruh","brŭh","brúh","brùh","brūh"] # liste des bruh
 
+def bruh_msg(n):#créer un message avec différent bruh
+    response = ""
+    for i in range(random.randint(1, n)):
+        if random.randint(1, 100) == 50:
+            response += "hurb"
+        else:
+            response += bruh_type[random.randint(0,4)]
+    return response
+
 @bot.event
 async def on_ready():
     activity = discord.CustomActivity(name="tag moi !")
@@ -98,14 +107,14 @@ async def on_message(message):
         if bot.user in message.mentions:
             print("Le bot a été mentionné")
             bruh_count = random.randint(1, 50)
-            response = " ".join([bruh_type[random.randint(0,4)]] * bruh_count) #bruh aléatoir
+            response = " ".join([bruh_msg(bruh_count)] * bruh_count) #bruh aléatoir
             await message.channel.send(response)
 
         # Réponse aléatoire avec "bruh"
         elif random.randint(1, 10) == 5:
             print("Le bot répond avec 'bruh'")
             bruh_count = random.randint(1, 30) 
-            response = " ".join([bruh_type[random.randint(0,4)]] * bruh_count) 
+            response = " ".join([bruh_msg(bruh_count)] * bruh_count) 
             await message.channel.send(response)
         
         await bot.process_commands(message)
