@@ -98,7 +98,7 @@ async def on_message(message):
                 for keyword, emoji_name in reactions.items():
                     emoji = emojis.get(emoji_name)
                     if emoji and keyword in message.content.lower():
-                        await message.add_reaction(emoji)
+                        await message.channel.send(emoji)
 
         except Exception as e:
             print(f"Erreur avec la récupération des emojis : {e}")
