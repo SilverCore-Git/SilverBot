@@ -109,6 +109,7 @@ async def on_message(message):
             bruh_count = random.randint(1, 50) 
             response = "".join([bruh_msg(bruh_count)])
             await message.channel.send(response)
+            return
 
         # Réponse aléatoire avec "bruh"
         elif random.randint(1, 10) == 5:
@@ -116,7 +117,7 @@ async def on_message(message):
              bruh_count = random.randint(1, 30) 
              response = "".join([bruh_msg(bruh_count)])
              await message.channel.send(response)
-        
+             return        
         #await bot.process_commands(message)
 
     else:
