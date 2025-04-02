@@ -12,6 +12,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.messages = True
 intents.members = True
+BRUH_STAT = True
+ROLE_ID = 1288881759152377876
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
@@ -46,13 +48,24 @@ statuts = [
 bruh_type = ["bruh ","brŭh ","brúh ","brùh ","brūh "] # liste des bruh
 
 def bruh_msg(n):
-    response = ""
-    for i in range(random.randint(1, n)):
-        if random.randint(1, 100) == 50:
-            response += "hurb "
-        else:
-            response += bruh_type[random.randint(0,4)]
-    return response
+    if BRUH_STAT == True:
+        response = ""
+        for i in range(random.randint(1, n)):
+            if random.randint(1, 100) == 50:
+                response += "hurb "
+            else:
+                response += bruh_type[random.randint(0,4)]
+        return response
+#toggle bot car a certain moment il est chient
+@bot.tree.command()
+async def toggle_bot(interaction: discord.Interaction):
+    if ROLE_ID not in [role.id for role in interaction.user.roles]:
+        await interaction.response.send_message("Vous n'avez pas la permission d'utiliser cette commande.", ephemeral=True)
+        return
+    else:
+        if BRUH_STAT == True:BRUH_STAT=False
+        else:BRUH_STAT = False
+        return
 
 @bot.event
 async def on_ready():
