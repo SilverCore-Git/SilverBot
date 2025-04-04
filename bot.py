@@ -64,7 +64,7 @@ async def toggle_bot(interaction: discord.Interaction):
         return
     else:
         if BRUH_STAT == True:BRUH_STAT=False
-        else:BRUH_STAT = False
+        else:BRUH_STAT = True
         return
 
 @bot.event
