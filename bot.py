@@ -59,19 +59,26 @@ def bruh_msg(n):
 #toggle bot car a certain moment il est chient
 @bot.tree.command()
 async def toggle_bot(interaction: discord.Interaction):
+    global BRUH_STAT
     if ROLE_ID not in [role.id for role in interaction.user.roles]:
         await interaction.response.send_message("Vous n'avez pas la permission d'utiliser cette commande.", ephemeral=True)
         return
     else:
         if BRUH_STAT == True:BRUH_STAT=False
         else:BRUH_STAT = True
+        await interaction.response.send_message("L'état du bot a bien été changer.", ephemeral=True)
         return
 
 @bot.event
 async def on_ready():
     activity = discord.CustomActivity(name="tag moi !")
     await bot.change_presence(activity=activity)
-    print(f'Connecté en tant que {bot.user}')
+    print(f"Bot connecté : {bot.user.name}")
+    try:
+        synced = await bot.tree.sync()
+        print(f"{len(synced)} commande(s) synchronisée(s)")
+    except Exception as e:
+        print("l'erreur est :" + str(e))
 
 @bot.event
 async def on_message(message):
