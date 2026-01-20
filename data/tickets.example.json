@@ -1,0 +1,42 @@
+{
+  "tickets": [
+    {
+      "id": "1",
+      "authorId": "123456789012345678",
+      "authorName": "Jean_Dupont",
+      "channelId": "987654321098765432",
+      "domain": "technique",
+      "reason": "Mon bot Discord ne démarre pas et me retourne une erreur \"Cannot find module 'discord.js'\". J'ai pourtant installé npm install et tout",
+      "status": "closed",
+      "helperId": "111111111111111111",
+      "helperName": "Helper_Bot",
+      "createdAt": 1704067200000,
+      "closedAt": 1704070800000
+    },
+    {
+      "id": "2",
+      "authorId": "222222222222222222",
+      "authorName": "Marie_Durand",
+      "channelId": "888888888888888888",
+      "domain": "support",
+      "reason": "Je n'arrive pas à inviter le bot sur mon serveur. Où dois-je obtenir l'URL d'invitation?",
+      "status": "claimed",
+      "helperId": "111111111111111111",
+      "helperName": "Helper_Bot",
+      "createdAt": 1704153600000,
+      "closedAt": null
+    },
+    {
+      "id": "3",
+      "authorId": "333333333333333333",
+      "authorName": "Admin_User",
+      "channelId": "777777777777777777",
+      "domain": "moderation",
+      "reason": "Un utilisateur spam dans le serveur, nécessite une action de modération urgente",
+      "status": "open",
+      "createdAt": 1704240000000,
+      "closedAt": null
+    }
+  ],
+  "lastId": 3
+}
